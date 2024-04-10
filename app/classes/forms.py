@@ -14,6 +14,7 @@ class ProfileForm(FlaskForm):
     lname = StringField('Last Name', validators=[DataRequired()]) 
     image = FileField("Image") 
     submit = SubmitField('Post')
+    role = SelectField('Role',choices=[("Teacher","Teacher"),("Student","Student")])
 
 class ConsentForm(FlaskForm):
     adult_fname = StringField('First Name',validators=[DataRequired()])
@@ -49,4 +50,11 @@ class ClinicForm(FlaskForm):
     state = StringField('State', validators=[DataRequired()])
     zipcode = StringField('Zipcode',validators=[DataRequired()])
     description = StringField('Description', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
+class BedForm(FlaskForm):
+    BedLength = StringField('BedLength', validators=[DataRequired()])
+    BedWidth = StringField('BedWidth', validators=[DataRequired()])
+    MatressType = StringField('MatressType', validators=[DataRequired()])
+    BedSize = StringField('BedSize', validators=[DataRequired()])
     submit = SubmitField('Submit')

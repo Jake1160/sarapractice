@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block body %}
+Role: {{current_user.role}} <br>
 <h1 class="display-1">
     My Profile
     <a href="/myprofile/edit">
@@ -22,7 +23,8 @@
             Google User Name: {{current_user.gname}} <br>
         {% endif %}
         Email: {{current_user.email}} <br>
-        <hr>
+        role: {{current_user.role}}
+        <hr> 
         <a href="/consent">
             <img width="40" src="/static/edit.png">
         </a>
