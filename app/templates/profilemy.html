@@ -12,7 +12,7 @@
         {% if current_user.image %}
             <img class="img-thumbnail img-fluid" src="data:image;base64,{{base64encode(current_user.image.read())}}"> <br>
         {% else %}
-            <img class="img-thumbnail" width = "100" src="/static/bdog.png">
+            <img class="img-thumbnail" width = "100" src="https://t4.ftcdn.net/jpg/01/02/68/59/360_F_102685955_z0aBzuMYCvBivauBkaNKH8U95cwT7Dxw.jpg">
         {% endif %} 
     </div>
     <div class="col display-5">
@@ -22,14 +22,6 @@
             Google User Name: {{current_user.gname}} <br>
         {% endif %}
         Email: {{current_user.email}} <br>
-        <hr>
-        <a href="/consent">
-            <img width="40" src="/static/edit.png">
-        </a>
-        <h1 class="display-1">Send Sleep Info</h1>
-        Consent to send sleep info: {{current_user.consent}} <br>
-        Send to: {{current_user.adult_fname}} {{current_user.adult_lname}} <br>
-        Email: {{current_user.adult_email}}
     </div>
 </div>
 <br>

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<img src="https://as1.ftcdn.net/v2/jpg/01/26/12/10/1000_F_126121021_pNtf0NXxFBpgxA7ETO4qZ6Wc6dKZ1hvg.jpg" class="rounded float-end" width = "200" hieght= "200" alt="...">
+
+<img src="https://as1.ftcdn.net/v2/jpg/01/26/12/10/1000_F_126121021_pNtf0NXxFBpgxA7ETO4qZ6Wc6dKZ1hvg.jpg" class="rounded float-start" width = "200" hieght= "200" alt="...">    </div>
+<div class="row">
+    <div class="col">
+        <h1 class="display-5">Add a new workout!</h1>
+    </div>
+    <div class="col">
+        <a href="/workout/new" class="btn btn-primary btn-sm mt-5" role="button">Add workout here</a>
+    </div>
+</div>
+
+{% if workouts %}
+    {% for workout in workouts %}
+        <div class="container row border-bottom">
+            <div class="col">
+                {% if loop.index == 1 %}
+                    <h3 class="display-5">Excercise</h3>
+                {% endif %}
+                {{workout.excercise}}
+            </div>
+            <div class="col">
+                {% if loop.index == 1 %}
+                    <h3 class="display-5">Weight</h3>
+                {% endif %}
+                {{workout.weight}}
+            </div>
+            <div class="col">
+                {% if loop.index == 1 %}
+                    <h3 class="display-5">Sets</h3>
+                {% endif %}
+                {{workout.sets}}
+            </div>
+            <div class="col">
+                {% if loop.index == 1 %}
+                    <h3 class="display-5">Reps</h3>
+                {% endif %}
+                {{workout.reps}}
+            </div>
+            <a data-toggle="tooltip" data-placement="top" title="Delete Sleep" href="/workout/delete/{{workout.id}}">
+                <img width="20" class="bottom-image" src="/static/delete.png">
+            </a>
+        </div>
+    {% endfor %}
+{% else %}
+
+{% endif %}
+
+{% endblock %}

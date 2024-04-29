@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% if workout %}
+    <br>
+
+    Excericse: {{workout.excercise}}
+    <br>
+    Weight: {{workout.weight}}
+    <br>
+    Sets: {{workout.sets}}
+    <br>
+    Reps: {{workout.reps}}
+
+{% endif %}
+
+{% endblock %}
